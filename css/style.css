@@ -54,6 +54,9 @@ main{
     background-color: cornflowerblue;
 }
 
+.bomb{
+    background-color: red;
+}
 /* FOOTER */
 footer{
     padding: 1rem;

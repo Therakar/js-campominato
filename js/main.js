@@ -18,12 +18,11 @@ const boardContainer = document.querySelector(".boardContainer")
 function createGame(boardElement, totCell){ //funzione che crea la griglia di gioco
     boardElement.innerHTML = "";
     
-    let bomb = 1; 
-    while(bomb < 16){ //ciclo while che genera 16 numeri casuali e li trasferisce nell'array bombContainer
+    let i = 1; 
+    while(bombContainer.length < 16){ //ciclo while che genera 16 numeri casuali e li trasferisce nell'array bombContainer
         let bombCell = getRndInteger(1, 100); 
         bombContainer.push(`${bombCell}`);
-        bomb++
-       
+        i++
     } 
     console.log(`Queste sono le bombe: ${bombContainer}`);  //DEBUG
 
@@ -39,7 +38,7 @@ function createGame(boardElement, totCell){ //funzione che crea la griglia di gi
             chosenNumbers.push(`${i}`); //inserisce i numeri scelti nell'array chosenNumbers
             console.log(`HAI SELEZIONATO L'ELEMENTO:  ${i}`);
             console.log(`Questi sono i numeri scelti : ${chosenNumbers}`); //DEBUG
-            
+
             if (`${i} == ${chosenNumbers}`){ // ciclo if che fa toglie l'event listener dall'elemento una volta che viene attivato per la prima volta 
                 this.removeEventListener("click", onClick); //rimuove l'event listener
             }
